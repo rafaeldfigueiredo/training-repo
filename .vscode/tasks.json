@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "npm i -g @angular/cli",
+			"path": "myapp",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: install - myapp",
+			"detail": "install dependencies from package"
+		}
+	]
+}
