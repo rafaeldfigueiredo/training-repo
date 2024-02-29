@@ -2,4 +2,3 @@ image: gitpod/workspace-full:latest
 tasks:
 - before: cd myapp
 - init: npm i -g @angular/cli
-
