@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MessagesService } from '../../services/messages.service';
 
 @Component({
   selector: 'app-new-post',
@@ -13,12 +14,19 @@ export class NewPostComponent {
   tweetMaxLength: number = 240;
   tweetRemain: number = this.tweetMaxLength;
 
+  constructor(private service: MessagesService) {}
+
   sendTweet() {
-    this.tweetMessage == ''
-      ? alert('Twitter not Created')
-      : alert(this.tweetMessage);
+    if (this.tweetMessage == '') {
+      alert('Twitter not Created');
+    } else {
+      this.service.addMessage(this.tweetMessage);
+      this.tweetMessage = '';
+      this.tweetRemain = this.tweetMaxLength;
+      alert(this.tweetMessage);
+    }
   }
   changeTweet() {
-    this.tweetRemain = 240 - this.tweetMessage.length;
+    this.tweetRemain = this.tweetMaxLength - this.tweetMessage.length;
   }
 }
