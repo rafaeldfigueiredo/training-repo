@@ -11,6 +11,8 @@ export class MessagesService {
     this.messages.push(message);
   }
   getMessages() {
+    //Get Messages
+    
     return this.messages;
   }
   clearMessages() {
