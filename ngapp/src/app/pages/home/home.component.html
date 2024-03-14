@@ -7,8 +7,9 @@
 </div>
 
 <div class="flex flex-col items-center justify-center container mx-auto">
-	<app-tweet TweetMessage="Fig"/>
-	<app-tweet TweetMessage="Fig"/>
+	@for (tw of tweets; track $index) {
+		<app-tweet [TweetMessage]=tw/>
+	}
 </div>
 
 <div class="bottom-0 m-auto w-full">
